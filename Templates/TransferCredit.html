@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Send Credit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      {% with messages = get_flashed_messages()%}
+      {% if messages%}
+        {%for message in messages%}
+          <h3> {{message}}</h3>
+        {%endfor%}
+      {%endif%}
+    {%endwith%} 
+        <h1 class="display-1">Please Enter the Information</h1>
+        <form method="POST" action="">
+            <div class="form-group">
+                <label for="Input">Reciever ID</label>
+                <input type="text" class="form-control" name="Reciever_id" id="r">
+              </div>
+              <div class="form-group">
+                <label for="Credit">Credit</label>
+                <input type="number" class="form-control" name="Credit" id="Credit">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>  
+    </div>
+  </body>
+</html>
