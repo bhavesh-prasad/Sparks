@@ -5,7 +5,7 @@ import DBHandler as db
 import os
 from flask_toastr import Toastr
 toastr = Toastr(app)
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+app.secret_key = '_5#y2L"F4Q8z\n\xec]/'
 @app.route('/')
 @app.route('/home')
 def Home():
