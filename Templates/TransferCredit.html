@@ -3,11 +3,22 @@
   <head>
     <title>Send Credit</title>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
+  <style>
+    body {
+        background-image: url("https://wallpapercave.com/wp/wp2757852.gif");
+        background-color: #cccccc;
+        background-position:center;
+        width: 100%;
+        height: auto;
+        padding: 2%;
+      }
+  </style>
   <body>
-    <div class="container">
+    <div class="container" style="font-family: 'Shadows Into Light', cursive;color: white;">
       {% with messages = get_flashed_messages()%}
       {% if messages%}
         {%for message in messages%}
@@ -15,7 +26,7 @@
         {%endfor%}
       {%endif%}
     {%endwith%} 
-        <h1 class="display-1">Please Enter the Information</h1>
+        <h1 class="display-1" style="font-family: 'Shadows Into Light', cursive;color: white;">Please Enter the Information</h1>
         <form method="POST" action="">
             <div class="form-group">
                 <label for="Input">Reciever ID</label>
