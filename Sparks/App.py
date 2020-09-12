@@ -32,4 +32,4 @@ def users():
 
 if __name__ == "__main__":
    os.system('python3 DBHandler.py')
-   app.run(debug=True)
+   app.run()
