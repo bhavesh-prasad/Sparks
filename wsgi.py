@@ -1,4 +1,4 @@
-from Sparks.App import app
+from Sparks import app
 
 if __name__ == "__main__":
 	app.run()
