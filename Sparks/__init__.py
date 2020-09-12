@@ -1,6 +1,6 @@
 from flask import Flask,flash,render_template,request,redirect,url_for
 import sqlite3 as sql
-app= Flask(__name__, template='./templates')
+app= Flask(__name__, template_folder='./templates')
 import DBHandler as db
 import os
 app.secret_key = '_5#y2L"F4Q8z\n\xec]/'
