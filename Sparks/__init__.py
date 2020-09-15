@@ -22,10 +22,14 @@ def users():
       if reciever_id==request.args.get('uid'):
          flash("You cannot send money to yourself")
          return render_template('TransferCredit.html')      
+      if cur.execute("select credit_number from users where uid=(?)",(request.args.get('uid'))).fetchone()[0]<int(credit):
+         flash("You don't have that much amount of credit to send")
+         return render_template('TransferCredit.html')
       cur.execute("update users set credit_number =credit_number +(?) where uid=(?)",(credit,reciever_id))
       cur.execute("update users set credit_number =credit_number -(?) where uid=(?)",(credit,request.args.get('uid')))
       cur.execute('insert into logs(sender,reciever,credit_number) values(?,?,?) ',(request.args.get('uid'),reciever_id,credit))
       con.commit()
+      
       return redirect(url_for('Home'))
    return render_template('TransferCredit.html')
 
