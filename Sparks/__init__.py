@@ -25,10 +25,24 @@ def users():
       if cur.execute("select credit_number from users where uid=(?)",(request.args.get('uid'))).fetchone()[0]<int(credit):
          flash("You don't have that much amount of credit to send")
          return render_template('TransferCredit.html')
+      if int(credit)<=0:
+         if int(credit)==0:
+            flash("You cannot Send zero credit")
+         else:
+            flash("Please enter positive Credit Value")
+         return render_template("TransferCredit.html")
+      # temp= cur.execute('Select count(*) from users where uid =(?)',(reciever_id,)).fetchone()
+      if cur.execute('Select count(*) from users where uid =(?)',(reciever_id,)).fetchone()[0]==0:
+         flash("Please enter a valid uid")
+         return render_template("TransferCredit.html")
       cur.execute("update users set credit_number =credit_number +(?) where uid=(?)",(credit,reciever_id))
       cur.execute("update users set credit_number =credit_number -(?) where uid=(?)",(credit,request.args.get('uid')))
       cur.execute('insert into logs(sender,reciever,credit_number) values(?,?,?) ',(request.args.get('uid'),reciever_id,credit))
-      con.commit()
+      try:
+         con.commit()
+      except e:
+         flash("There was some error updating the Database")
+         return render_template("TransferCredit.html")
       
       return redirect(url_for('Home'))
    return render_template('TransferCredit.html')
