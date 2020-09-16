@@ -12,19 +12,60 @@
     
     <style> 
       body {
-        background-image: url("https://wallpapercave.com/wp/wp2757852.gif");
-        background-color: #cccccc;
+        background-image: url("https://wallpapercave.com/wp/wp2757874.gif");
+        /* background-image: linear-gradient(to bottom right, black,grey); */
         background-position:center;
         width: 100%;
         height: auto;
         padding: 2%;
+
       }
+      button {
+  font-size: 2em;
+  background: #23313a;
+  color: #fff;
+  border: 0.25rem solid #314a5a;
+  padding: 0.85em 0.75em;
+  margin: 1rem;
+  position:relative;
+  left: 70%;
+  z-index: 1;
+  overflow: hidden;
+}
+button:hover {
+  color: #262829;
+}
+button::after {
+  content: "";
+  background: #57767e;
+  position: absolute;
+  z-index: -1;
+  padding: 0.85em 0.75em;
+  display: block;
+}
+button[class^="slide"]::after {
+  transition: all 0.35s;
+}
+button[class^="slide"]:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.35s;
+}
+button.slide_from_left::after {
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+}
       </style>
-    <h1 style="padding: 1%;color: white;font-family: 'Shadows Into Light', cursive;">Sparks Foundation Task 2</h6>
-    <h5 style="padding: 1%;color: white;font-family: 'Shadows Into Light', cursive;">Click on your id number to start the transfer</h5>
+    <h1 style="padding: 1%;color: white;font-family: 'Shadows Into Light', cursive;">Sparks Foundation Task 2</h1>
+    <h2 style="padding: 1%;color: white;font-family: 'Shadows Into Light', cursive;">Click on your id number to start the transfer</h2>
   </head>
   
-  <body">
+  <body>
+    <button class="slide_from_left">View All Logs</button>
     <table class=" ui inverted celled striped table" style="background-color: rgba(143, 138, 138, 0.466);">
         <thead>
           <tr>

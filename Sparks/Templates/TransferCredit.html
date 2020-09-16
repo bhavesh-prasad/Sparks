@@ -9,7 +9,7 @@
   </head>
   <style>
     body {
-        background-image: url("https://wallpapercave.com/wp/wp2757852.gif");
+        background-image: url("https://wallpapercave.com/wp/wp2757874.gif");
         background-color: #cccccc;
         background-position:center;
         width: 100%;
@@ -38,7 +38,7 @@
     }
   </script>
   <body>
-    <div class="container" style="font-family: 'Shadows Into Light', cursive;color: white;">
+    <div class="container" style="font-family: 'Shadows Into Light', cursive;color: rgb(163, 116, 116);">
       {% with messages = get_flashed_messages()%}
       {% if messages%}
         {%for message in messages%}
@@ -46,18 +46,19 @@
         {%endfor%}
       {%endif%}
     {%endwith%} 
-        <h1 class="display-1" style="font-family: 'Shadows Into Light', cursive;color: white;">Please Enter the Information</h1>
-        <form method="POST" action="" id="form_id">
-            <div class="form-group">
-                <label for="Input">Reciever ID</label>
-                <input type="text" class="form-control"  name="Reciever_id" id="r">
-              </div>
-              <div class="form-group">
-                <label for="Credit">Credit</label>
-                <input type="number" class="form-control" name="Credit" id="Credit">
-              </div>
-              <input type="button" class="btn btn-primary" onclick="myFunction()" value="Submit">
-          </form>  
+    <div class="container">
+      <h1 class="display-1" style="font-family: 'Shadows Into Light', cursive;color: white;">Please Enter the Information</h1>
+      <form method="POST" action="" id="form_id">
+          <div class="form-group">
+              <label for="Input">Reciever ID</label>
+              <input type="text" class="form-control"  name="Reciever_id" id="r">
+            </div>
+          <div class="form-group">
+              <label for="Credit">Credit</label>
+              <input type="number" class="form-control" name="Credit" id="Credit">
+          </div>
+          <input type="button" class="btn btn-primary" onclick="myFunction()" value="Submit">
+      </form>
     </div>
   </body>
 </html>
