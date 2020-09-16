@@ -17,6 +17,26 @@
         padding: 2%;
       }
   </style>
+  <script>
+    var input1 = document.getElementById("r");
+    var input2 = document.getElementById("Credit");
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("submit_button").click();
+      }
+    });
+    input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("submit_button").click();
+      }
+    });
+    function myFunction() {
+      alert("Credit Transfer Successful");
+      document.getElementById("form_id").submit();
+    }
+  </script>
   <body>
     <div class="container" style="font-family: 'Shadows Into Light', cursive;color: white;">
       {% with messages = get_flashed_messages()%}
@@ -27,16 +47,16 @@
       {%endif%}
     {%endwith%} 
         <h1 class="display-1" style="font-family: 'Shadows Into Light', cursive;color: white;">Please Enter the Information</h1>
-        <form method="POST" action="">
+        <form method="POST" action="" id="form_id">
             <div class="form-group">
                 <label for="Input">Reciever ID</label>
-                <input type="text" class="form-control" name="Reciever_id" id="r">
+                <input type="text" class="form-control"  name="Reciever_id" id="r">
               </div>
               <div class="form-group">
                 <label for="Credit">Credit</label>
                 <input type="number" class="form-control" name="Credit" id="Credit">
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <input type="button" class="btn btn-primary" onclick="myFunction()" value="Submit">
           </form>  
     </div>
   </body>
