@@ -12,6 +12,13 @@ def Home():
    det=cur.execute('Select * from Users')
    return render_template('Home.html',users=det)
 
+@app.route('/logs')
+def logs():
+   con=sql.connect('Database.db')
+   cur=con.cursor()
+   log=cur.execute('Select * from logs').fetchall()
+   return render_template('Logs.html',user_logs=log)
+
 @app.route('/users',methods=['GET','POST'])
 def users():
    if request.method== 'POST':

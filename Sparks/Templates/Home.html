@@ -17,7 +17,7 @@
         background-position:center;
         width: 100%;
         height: auto;
-        padding: 2%;
+        padding: 5%;
 
       }
       button {
@@ -27,7 +27,8 @@
   border: 0.25rem solid #314a5a;
   padding: 0.85em 0.75em;
   margin: 1rem;
-  position:relative;
+  position:absolute;
+  top: 10%;
   left: 70%;
   z-index: 1;
   overflow: hidden;
@@ -65,7 +66,7 @@ button.slide_from_left::after {
   </head>
   
   <body>
-    <button class="slide_from_left">View All Logs</button>
+    <a href="{{url_for('logs')}}"><button class="slide_from_left">View All Logs</button></a>
     <table class=" ui inverted celled striped table" style="background-color: rgba(143, 138, 138, 0.466);">
         <thead>
           <tr>
