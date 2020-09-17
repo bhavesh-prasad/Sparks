@@ -50,7 +50,7 @@ def users():
       except e:
          flash("There was some error updating the Database")
          return render_template("TransferCredit.html")
-      
+      flash("Credit Transfer Successful")
       return redirect(url_for('Home'))
    return render_template('TransferCredit.html')
 
