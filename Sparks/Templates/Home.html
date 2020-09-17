@@ -24,17 +24,20 @@
         background: #23313a;
         color: #fff;
         border: 0.25rem solid #314a5a;
-        position:absolute;
+        position:relative;
         padding:1%;
-        top: 10%;
-        left: 70%;
+        /* top: 10%;
+        left: 70%; */
       }
       </style>
-    <h1 style="padding: 1%;font-size:5vw ;color: white;font-family: 'Shadows Into Light', cursive;">Sparks Foundation Task 2</h1>
-    <h2 style="padding: 1%;font-size: 4vw;color: white;font-family: 'Shadows Into Light', cursive;">Click on your id number to start the transfer</h2>
   </head>
   
   <body >
+    <div class="container">
+      <h1 style="padding: 1%;font-size:5vw ;color: white;font-family: 'Shadows Into Light', cursive;">Sparks Foundation Task 2</h1>
+      <h2 style="padding: 1%;font-size: 4vw;color: white;font-family: 'Shadows Into Light', cursive;">Click on your id number to start the transfer</h2>
+      <a href="{{url_for('logs')}}"><button class="slide_from_left" >View All Logs</button></a>
+    </div>
     <div class="container" style="background-color: rgba(78, 59, 59, 0.795);">
       {% with messages = get_flashed_messages()%}
       {% if messages%}
@@ -43,7 +46,6 @@
         {%endfor%}
       {%endif%}
     {%endwith%} 
-      <a href="{{url_for('logs')}}"><button class="slide_from_left" >View All Logs</button></a>
     <div class="table-responsive">
       <table class=" table table-boderless table-dark" style="background-color: rgba(143, 138, 138, 0);">
         <thead >
