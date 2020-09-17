@@ -38,14 +38,17 @@
       <h2 style="padding: 1%;font-size: 4vw;color: white;font-family: 'Shadows Into Light', cursive;">Click on your id number to start the transfer</h2>
       <a href="{{url_for('logs')}}"><button class="slide_from_left" >View All Logs</button></a>
     </div>
-    <div class="container " style="padding-top: 2%;background-color: rgba(25, 60, 9, 0.8);">
+
       {% with messages = get_flashed_messages()%}
       {% if messages%}
         {%for message in messages%}
-          <h3 style="font-family: 'Shadows Into Light', cursive;color: rgb(250, 246, 246);"> {{message}}</h3>
+          <div class="alert alert-primary" role="alert" style="font-family: 'Shadows Into Light', cursive;background-color: rgb(139, 253, 139);color: rgb(0, 0, 0);"> {{message}}</div>
         {%endfor%}
       {%endif%}
     {%endwith%} 
+    </div>
+    <div class="container " style="padding-top: 2%;background-color: rgba(54, 40, 40, 0.8);">
+
     <div class="table-responsive" >
       <table class=" table table-boderless table-dark" style="background-color: rgba(143, 138, 138, 0);">
         <thead >

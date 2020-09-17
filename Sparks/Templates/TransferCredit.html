@@ -43,7 +43,7 @@
       {% with messages = get_flashed_messages()%}
       {% if messages%}
         {%for message in messages%}
-          <h3> {{message}}</h3>
+        <div class="alert alert-primary" role="alert" style="font-family: 'Shadows Into Light', cursive;background-color: rgb(139, 253, 139);color: rgb(0, 0, 0);"> {{message}}</div>
         {%endfor%}
       {%endif%}
     {%endwith%} 
