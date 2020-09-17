@@ -44,7 +44,9 @@ def users():
          return render_template("TransferCredit.html")
       cur.execute("update users set credit_number =credit_number +(?) where uid=(?)",(credit,reciever_id))
       cur.execute("update users set credit_number =credit_number -(?) where uid=(?)",(credit,request.args.get('uid')))
-      cur.execute('insert into logs(sender,reciever,credit_number) values(?,?,?) ',(request.args.get('uid'),reciever_id,credit))
+      sender_name=cur.execute("Select fname,lname from users where uid=(?)",(request.args.get('uid'),)).fetchall()
+      reciever_name=cur.execute("Select fname,lname from users where uid=(?)",(reciever_id,)).fetchall()
+      cur.execute('insert into logs(sender,reciever,credit_number) values(?,?,?) ',(sender_name[0][0]+" "+sender_name[0][1],reciever_name[0][0]+" "+reciever_name[0][1],credit))
       try:
          con.commit()
       except e:
@@ -53,7 +55,6 @@ def users():
       flash("Credit Transfer Successful")
       return redirect(url_for('Home'))
    return render_template('TransferCredit.html')
-
 
 if __name__ == "__main__":
    os.system('python3 DBHandler.py')

@@ -3,7 +3,7 @@ import sqlite3 as sql
 con=sql.connect('Database.db')
 cur=con.cursor()
 cur.execute('Create table if not exists USERS ( uid integer primary key AUTOINCREMENT, fname text , lname text , credit_number number ) ')
-cur.execute('Create table if not exists LOGS (  TRANSACTION_ID integer primary key AUTOINCREMENT, Sender number  , Reciever number ,credit_number number ,foreign key(Sender) references Users(uid),foreign key(Reciever) references Users(uid))')
+cur.execute('Create table if not exists LOGS (  TRANSACTION_ID integer primary key AUTOINCREMENT, Sender text  , Reciever text ,credit_number number)')
 if cur.execute('Select count(*) from Users').fetchall()[0][0]==0:    
     cur.execute('Insert into users(fname,lname,credit_number) values("Bhavesh" , "Prasad", 1000 )') 
     cur.execute('Insert into users(fname,lname,credit_number) values("Aditya" , "Akash", 500 )') 
