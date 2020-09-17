@@ -38,7 +38,7 @@
       <h2 style="padding: 1%;font-size: 4vw;color: white;font-family: 'Shadows Into Light', cursive;">Click on your id number to start the transfer</h2>
       <a href="{{url_for('logs')}}"><button class="slide_from_left" >View All Logs</button></a>
     </div>
-    <div class="container " style=" border-radius: 25px;padding-top: 2%;background-color: rgba(255, 255, 255, 0.795);">
+    <div class="container " style="padding-top: 2%;background-color: rgba(25, 60, 9, 0.8);">
       {% with messages = get_flashed_messages()%}
       {% if messages%}
         {%for message in messages%}
@@ -46,8 +46,8 @@
         {%endfor%}
       {%endif%}
     {%endwith%} 
-    <div class="table-responsive">
-      <table class=" table table-boderless" style="background-color: rgba(143, 138, 138, 0);">
+    <div class="table-responsive" >
+      <table class=" table table-boderless table-dark" style="background-color: rgba(143, 138, 138, 0);">
         <thead >
           <tr>
             <th scope="col">User ID</th>
