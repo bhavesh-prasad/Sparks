@@ -34,9 +34,11 @@
     <h2 style="padding: 1%;font-size: 4vw;color: white;font-family: 'Shadows Into Light', cursive;">Click on your id number to start the transfer</h2>
   </head>
   
-  <body class="container" style="background-color: white;">
-    <a href="{{url_for('logs')}}"><button class="slide_from_left" >View All Logs</button></a>
-    <table class=" table table-boderless table-dark" style="background-color: rgba(143, 138, 138, 0);">
+  <body >
+    <div class="container" style="background-color: rgba(78, 59, 59, 0.795);">
+      <a href="{{url_for('logs')}}"><button class="slide_from_left" >View All Logs</button></a>
+    <div class="table-responsive">
+      <table class=" table table-boderless table-dark" style="background-color: rgba(143, 138, 138, 0);">
         <thead >
           <tr>
             <th scope="col">User ID</th>
@@ -57,5 +59,9 @@
 
         </tbody>
       </table>
+    </div>
+    
+    </div>
+    
   </body>
 </html>
