@@ -26,6 +26,9 @@ def users():
       cur=con.cursor()
       reciever_id = request.form.get("Reciever_id")
       credit = request.form.get("Credit")
+      if credit=='' or reciever_id=='':
+         flash("Please Enter complete information")
+         return render_template('TransferCredit.html')
       if reciever_id==request.args.get('uid'):
          flash("You cannot send money to yourself")
          return render_template('TransferCredit.html')      
